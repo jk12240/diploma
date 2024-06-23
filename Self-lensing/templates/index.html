@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-lensing modelling</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <h1>Self-lensing modelling</h1>
+    <form action="/generate" method="post">
+        <label for="param1">Redshift \( z \):</label>
+        <input type="text" id="param1" name="param1" required><br><br>
+        
+        <label for="param2">\( M_\text{Lens}, 10^7 \cdot M_{\odot} \):</label>
+        <input type="text" id="param2" name="param2" required><br><br>
+        
+        <label for="param3"> Distance between BH, \( D_{LS} \), pc:</label>
+        <input type="text" id="param3" name="param3" required><br><br>
+        
+        <label for="param4">Length of jet projection, \( \theta_E \):</label>
+        <input type="text" id="param4" name="param4" required><br><br>
+        
+        <label for="param5">Inclination,  \( \varphi \), deg:</label>
+        <input type="text" id="param5" name="param5" required><br><br>
+        
+        <label for="param6">\( x_c \), \( \theta_E \):</label>
+        <input type="text" id="param6" name="param6" required><br><br>
+        
+        <label for="param7">\( y_c \), \( \theta_E \):</label>
+        <input type="text" id="param7" name="param7" required><br><br>
+        
+        <label for="param8">Number of points, \( n \):</label>
+        <input type="text" id="param8" name="param8" required><br><br>
+        
+        <input type="submit" value="Generate">
+    </form>
+    {% if image_url %}
+    <h2>Generated Image:</h2>
+    <img src="{{ image_url }}" alt="Generated Image">
+    {% endif %}
+</body>
+</html>
+
